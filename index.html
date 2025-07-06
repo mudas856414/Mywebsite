@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YAHYA DUMBASS - Ocean Roast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Particle Background */
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle, #0a0a0a 0%, #000000 100%);
+      overflow: hidden;
+      z-index: 0;
+    }
+    .particles span {
+      position: absolute;
+      display: block;
+      width: 6px; height: 6px;
+      background: #00f7ff;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: rise 20s linear infinite;
+    }
+    @keyframes rise {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0.1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0.8; }
+    }
+
+    /* Animated Ocean Waves */
+    .waves {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 120px;
+      background: url('https://i.imgur.com/ygr6aEu.png');
+      background-repeat: repeat-x;
+      z-index: 1;
+      animation: waveMotion 40s linear infinite;
+      opacity: 0.07;
+    }
+    @keyframes waveMotion {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Ship Styles */
+    .ship {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: float 6s ease-in-out infinite;
+    }
+    .ship1 { left: 10%; bottom: 150px; animation-delay: 0s; }
+    .ship2 { left: 50%; bottom: 120px; animation-delay: 2s; }
+    .ship3 { left: 80%; bottom: 180px; animation-delay: 4s; }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid #fff;
+    }
+    .boat {
+      width: 60px;
+      height: 20px;
+      background: #c0392b;
+      border-radius: 0 0 20px 20px;
+      margin-top: -4px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Header Styling */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #00f7ff;
+      text-shadow: 0 0 15px #00f7ff88;
+      animation: fadeIn 2s forwards;
+      opacity: 0;
+    }
+    header p {
+      font-size: 1.5rem;
+      color: #ccc;
+      margin-top: 20px;
+      animation: fadeIn 3s forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      text-align: center;
+      background: rgba(10,10,10,0.8);
+      position: relative;
+      z-index: 2;
+    }
+    section:nth-child(even) {
+      background: rgba(20,20,20,0.85);
+    }
+    section h2 {
+      font-size: 2.8rem;
+      color: #00f7ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00f7ffaa;
+    }
+    section p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* Scroll Reveal */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #777;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div class="particles">
+    <!-- Create 40 floating particles -->
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const s = document.createElement('span');
+        s.style.left = Math.random() * 100 + '%';
+        s.style.animationDuration = (15 + Math.random() * 10) + 's';
+        document.querySelector('.particles').appendChild(s);
+      }
+    </script>
+  </div>
+
+  <!-- Ocean Waves -->
+  <div class="waves"></div>
+
+  <!-- Ships -->
+  <div class="ship ship1">
+    <div class="triangle"></div>
+    <div class="boat"></div>
+  </div>
+  <div class="ship ship2">
+    <div class="triangle"></div>
+    <div class="boat"></div>
+  </div>
+  <div class="ship ship3">
+    <div class="triangle"></div>
+    <div class="boat"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>YAHYA DUMBASS</h1>
+    <p>The king of skinny roasts</p>
+  </header>
+
+  <!-- Roast Sections -->
+  <main>
+    <section class="scroll-reveal">
+      <h2>Roast #1</h2>
+      <p>Yahya’s so skinny, NASA thought he was a new satellite — he passed right by the moon.</p>
+    </section>
+    <section class="scroll-reveal">
+      <h2>Roast #2</h2>
+      <p>He tried a push-up and the floor got offended. Even gravity said, “nah fam.”</p>
+    </section>
+    <section class="scroll-reveal">
+      <h2>Roast #3</h2>
+      <p>When Yahya steps on a LEGO, the LEGO cries.</p>
+    </section>
+    <section class="scroll-reveal">
+      <h2>Roast #4</h2>
+      <p>He flexed once and accidentally started a game of charades. Nobody guessed “biceps.”</p>
+    </section>
+    <section class="scroll-reveal">
+      <h2>Roast #5</h2>
+      <p>Even shadows quit trying to follow him—no mass, no sass.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 YAHYA DUMBASS. All rights reserved.
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    function handleReveal() {
+      const trigger = window.innerHeight * 0.85;
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', handleReveal);
+    window.addEventListener('load', handleReveal);
+  </script>
+</body>
+</html>
